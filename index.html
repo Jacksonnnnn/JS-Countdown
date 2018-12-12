@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			body {
+				background-image: url(http://s1.picswalls.com/wallpapers/2015/12/12/free-halloween-image_014849550_295.jpg);
+				font-family: Roboto, sans-serif;
+			}
+			p#countdown {
+			  	text-align: center;
+			  	font-size: 60px;
+			  	margin: 0 auto;
+				margin-bottom: 0px !important;
+				background-color: rgba(211,49,52,0.50);
+				border-radius: 20px;
+				width: 45%;
+			}
+			h1, h2 {
+				text-align: center;
+			}
+			div.main {
+				height: auto;
+				width: 65%;
+				margin: 0 auto;
+			}
+			div.heading {
+				padding-top: 20px;
+			}
+			p {
+				font-size: 24px;
+				color: darkred;
+			}
+			p.subtext {
+				font-size: 16px !important;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="heading">
+			<h1>Days left until Halloween?</h1>
+		</div>
+		<div class="main">
+			<p id="countdown"></p>
+			<p class="subtext">Time until Halloween (October 31st, 2018)</p>
+			<p>The straddling the line between fall and winter, plenty and paucity, life and death, Halloween is a time of celebration and superstition. In a number of countries around the world, as the days grow shorter and the nights get colder, people continue to usher in the winter season with gatherings, costumes and sweet treats.</p>
+			
+			<!--
+
+				COUNTDOWN SCRIPT
+
+			-->
+			<script>
+			// Set the date we're counting down to
+			var countDownDate = new Date("Oct 31, 2018 00:00:00").getTime();
+
+			// Update the count down every 1 second
+			var x = setInterval(function() {
+
+				// Get todays date and time
+				var now = new Date().getTime();
+
+				// Find the distance between now and the count down date
+				var distance = countDownDate - now;
+
+				// Time calculations for days, hours, minutes and seconds
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				// Output the result in an element with id="demo"
+				
+				document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+				// If the count down is over, write some text 
+				if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("countdown").innerHTML = "HALLOWEEN ALREADY HAPPENED!";
+				}
+			}, 1000);
+			</script>
+		</div>
+		<footer>
+			<p class="subtext madeby">Jackson Huse</p>	
+		</footer>
+	</body>
+</html>
